@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: rgb(168, 22, 39);
+}
+
+.header {
+    height: 38px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    position: fixed;
+}
+
+.header .logo {
+    float: left;
+    height: 38px;
+    margin-left: 50px;
+}
+
+.header .logo img {
+    height: 38px;
+}
+
+.nav {
+    float: left;
+    margin-left: 40px;
+}
+
+.nav ul li {
+    width: 85px;
+    padding: 0 7px;
+    float: left;
+    text-align: center;
+}
+
+.nav ul li a {
+    line-height: 38px;
+    font-size: 14px;
+    padding: 0px 9px;
+    border-radius: 16px;
+    display: block;
+}
+
+.nav .one a {
+    background-color: rgb(254, 146, 159);
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.header .nav .aa:hover {
+    color: rgb(30, 167, 121);
+    background-color: rgb(254, 146, 159);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 38px;
+    transition: 0.5s;
+}

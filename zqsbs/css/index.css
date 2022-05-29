@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../images/index/bjt.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* logo部分 */
+
+.container {
+    height: 160px;
+    margin: 80px 200px 0px 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .logo2 {
+    width: 300px;
+    height: 70px;
+    margin: 5px auto;
+}
+
+.container .logo2 img {
+    width: 300px;
+}
+
+.container .word {
+    margin-top: 6px;
+    color: rgb(148, 32, 45);
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    height: 45px;
+    font-size: 13px;
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+/* 首页卡片 */
+
+.shell {
+    min-width: 100%;
+    /* 添加透视效果 */
+    perspective: 900px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* 设置3d变化，该值规定保留元素的3D位置 */
+    transform-style: preserve-3d;
+}
+
+.shell .box {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transition: 0.3s;
+    overflow: hidden;
+    margin: 30px;
+    transform: rotateY(0deg);
+    transition-delay: .1s;
+    border-radius: 5px;
+    border: #fff 5px solid;
+}
+
+.shell .box h2 {
+    display: inline-block;
+}
+
+.shell .images .aaaa {
+    display: block;
+}
+
+
+/* rotateY（）定义沿着Y轴的3D转换；当鼠标所有卡片的父元素点shell上时，
+所有卡片像Y轴翻转20度 */
+
+.shell:hover .box {
+    transform: rotateY(20deg);
+}
+
+
+/* 当鼠标悬浮在当前卡片上时，当前卡片的翻转角度为0，
+并放大一点二五倍，加个阴影 */
+
+.shell .box:hover {
+    transform: rotateY(0deg) scale(1.25);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+
+/* 当鼠标悬浮在卡片上时，
+当前卡片后面的所有卡片全部都反向翻转负20度 */
+
+.shell .box:hover~.box {
+    /* 后续兄弟选择器 */
+    transform: rotateY(-20deg);
+}
+
+.shell .box .images img {
+    width: 100%;
+}
+
+.shell .box .content {
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 999;
+    padding: 15px;
+}
+
+.shell .box .content h2 {
+    color: #fff;
+    transition: 0.3s;
+    font-size: 20px;
+    transform: translateY(-100px);
+}
+
+.shell .box:hover .content h2 {
+    transform: translateY(-15px);
+}
+
+.shell .box .content p {
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    font-size: 14px;
+    transform: translateY(600px);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.shell .box:hover .content p {
+    transform: translateY(220px);
+}

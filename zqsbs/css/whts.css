@@ -1,0 +1,191 @@
+body {
+    height: 100vh;
+    /* 整体弹性布局，flex-direction设置弹性子元素在容器中的排列方式，justify-content设置主轴线对齐方式，align-items设置侧轴对齐 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/whts/bjt.jpg);
+    /* 设置背景图片的大小和是否固定或随着页面滚动 */
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+
+/* 轮播图部分 */
+
+.lunbo {
+    width: 900px;
+    height: 500px;
+    top: 150px;
+    border-radius: 5px;
+    border: 10px solid #fff;
+    box-shadow: 20px 30px 20px rgba(0, 0, 0, .5);
+    position: absolute;
+    /* 裁剪lunbo这个框，对它的左右边缘进行裁剪，值为hidden则裁剪内容且不提供滚轮 */
+    overflow-x: hidden;
+}
+
+.big-images {
+    /* 轮播大图容器的参数设置 */
+    left: 0;
+    width: 400%;
+    height: 100%;
+    transition: .2s;
+    display: flex;
+    position: absolute;
+}
+
+.img {
+    width: 100%;
+    background-size: cover;
+}
+
+.min-images {
+    /* 缩略图容器参数设置 */
+    bottom: 20px;
+    width: 35%;
+    z-index: 10;
+    right: 6%;
+    display: flex;
+    /* space-evenly均匀排列每个元素，每个元素之间的间隔相等 */
+    justify-content: space-evenly;
+    position: absolute;
+}
+
+.min {
+    /* 缩略图参数设定 */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* 规定背景图像的起始位置 */
+    background-position: center;
+    border: 5px solid rgba(255, 255, 255, .5);
+    cursor: pointer;
+    background-size: cover;
+}
+
+.button {
+    /* 按钮响应界面设置为整个轮播图范围 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    /* space-between均匀排列每个元素，首元素起点，末元素终点 */
+    justify-content: space-between;
+    /* user-select属性规定能否选取元素的文本，在此防止左右切换键被选取！但必须做浏览器适配 */
+    user-select: none;
+}
+
+.button-left,
+.button-right {
+    /* 左右按钮参数设置 */
+    top: 225px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 13px;
+    border-radius: 50%;
+    background-color: rgba(229, 79, 59, 0.7);
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* 分割线部分 */
+
+.box {
+    width: 80%;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    top: 900px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+}
+
+.line {
+    height: 3px;
+    width: 30%;
+    text-align: center;
+    display: inline-block;
+    background-color: black;
+}
+
+
+/* 卡片部分 */
+
+.mainn {
+    width: 100wh;
+    height: 600px;
+    top: 950px;
+    padding: 30px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mainn .card {
+    max-width: 350px;
+    width: 300px;
+    height: 300px;
+    padding: 20px 15px;
+    margin: 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, .6);
+    /* transition中ease-in-out规定过渡效果以慢速开始和结束 */
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    display: flex;
+    /* 设置弹性子元素在每个card中的排列方式，column为 垂直排列*/
+    flex-direction: column;
+}
+
+.mainn .card:hover {
+    height: 420px;
+}
+
+.mainn .c33:hover {
+    height: 500px;
+}
+
+.mainn .card .card-img {
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+    /* 使用相对定位保证排版稳定，相对于自身原始位置进行定位，不脱离文档流 */
+    position: relative;
+}
+
+.mainn .card .card-img img {
+    max-width: 100%;
+    height: 260px;
+    width: 240px;
+    border-radius: 20px;
+}
+
+.mainn .card .content {
+    margin-top: -140px;
+    opacity: 0;
+    color: #111;
+    /* 不透明度初始值为0，即完全透明、 */
+    padding: 10px 15px;
+    transition: 0.4s ease-in-out;
+    position: relative;
+    text-align: center;
+    /* visibility: hidden; */
+}
+
+.mainn .card:hover .content {
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+    /* 显示元素而不更改布局 */
+    /* visibility: visible; */
+}

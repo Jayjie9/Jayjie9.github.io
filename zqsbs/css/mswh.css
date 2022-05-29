@@ -1,0 +1,324 @@
+body {
+    background: url(../images/mswh/bjt.jpg) no-repeat fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* 三大招牌 */
+
+.container_board {
+    z-index: 1;
+    top: 185px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container_board .card_board {
+    width: 350px;
+    height: 400px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px #4f4545;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_board .card_board .content_board {
+    padding: 20px;
+    transition: 0.5s;
+    transform: translateY(30px);
+    /* text-align: center; */
+}
+
+.container_board .card_board .content_board h2 {
+    position: absolute;
+    top: -80px;
+    right: 25px;
+    font-size: 128px;
+    color: rgba(60, 22, 131, 0.2);
+}
+
+.container_board .card_board .content_board h3 {
+    color: rgb(105, 16, 26);
+    text-align: center;
+}
+
+.container_board .card_board .content_board p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #312424;
+    margin: 10px 0 15px 0;
+}
+
+.container_board img {
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+
+
+/* 四大文化 */
+
+.container_culture {
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    top: 350px;
+}
+
+.biaot {
+    top: 150px;
+    color: #f595b2;
+    -webkit-text-stroke: 1px black;
+    letter-spacing: 0.04em;
+    position: absolute;
+}
+
+.biaot2 {
+    top: 800px;
+    color: #f595b2;
+    -webkit-text-stroke: 1px black;
+    letter-spacing: 0.04em;
+    position: absolute;
+}
+
+.biaot3 {
+    top: 2000px;
+    color: #f595b2;
+    -webkit-text-stroke: 1px black;
+    letter-spacing: 0.04em;
+    position: absolute;
+}
+
+.container_culture::after {
+    /*背景虚化*/
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    filter: blur(3px);
+    transform: scale(1.3);
+    content: "";
+    position: absolute;
+    background: inherit;
+}
+
+.card {
+    width: 500px;
+    height: 400px;
+    border-radius: 45px;
+    transition: 0.3s all;
+    margin: 80px auto;
+    border: 3px #ffffff solid;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.8);
+    z-index: 9;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    justify-content: space-around;
+    /*相对定位元素的定位是相对其正常位置*/
+}
+
+.card:hover {
+    box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.img {
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+}
+
+.card:hover .img img {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+.content {
+    z-index: 9;
+    bottom: -200px;
+    left: 0;
+    width: 100%;
+    transition: 0.5s;
+    background: url(../images/mswh/wzbj.jpg);
+    height: 240px;
+    position: absolute;
+}
+
+.card:hover .content {
+    bottom: 0;
+}
+
+.content h2 {
+    line-height: 45px;
+    color: black;
+    text-align: center;
+}
+
+.content p {
+    color: black;
+    padding: 0 30px;
+    font-family: "微软雅黑", serif;
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 700;
+}
+
+
+/* 几大美食 */
+
+.container_food {
+    position: relative;
+    top: 500px;
+}
+
+.box_food {
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 400px;
+    color: black;
+    float: left;
+    text-align: center;
+    justify-content: center;
+}
+
+.box_food .card_food {
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    transition: 0.5s;
+    border-radius: 20px;
+    transition-delay: 0.5s;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.box_food .card_food:hover {
+    width: 600px;
+    transition-delay: 0s;
+}
+
+.box_food .card_food .circle {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    /*水平居中*/
+    justify-content: center;
+    /*垂直居中*/
+    align-items: center;
+}
+
+.box_food .card_food .circle::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0.7;
+    background: #f595b2;
+    clip-path: circle(120px at center);
+    position: absolute;
+}
+
+.box_food .card_food:hover .circle::before {
+    clip-path: circle(400px at center);
+}
+
+.box_food .card_food .circle .logo {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.box_food .card_food:hover .circle .logo {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.box_food .content_food {
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.5s;
+    visibility: hidden;
+    position: relative;
+}
+
+.box_food .card_food:hover .content_food {
+    z-index: 7;
+    left: 0;
+    opacity: 1;
+    transition-delay: 0.5s;
+    visibility: visible;
+}
+
+.box_food .content_food h2 {
+    color: #eeeeee;
+    font-size: 2.5ex;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.box_food .content_food p {
+    color: #f8f8f8;
+}
+
+.box_food .card_food .img_food {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 300px;
+    transition: 0.5s;
+    transition-delay: 0s;
+    border-radius: 10px;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+#img_ds {
+    width: 450px;
+}
+
+.box_food .card_food:hover .img_food {
+    left: 72%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition-delay: 0.5s;
+    opacity: 0.9;
+}
